@@ -1,0 +1,270 @@
+//===== Font Mixins =====
+$font-raleway: 'Raleway', sans-serif;
+$font-ptsans: 'PT Sans', sans-serif;
+
+//===== Color Scheme =====
+$white: #ffffff;
+$black: #000000;
+$finlandia: #557260;
+$juniper: #6A8B92;
+$battleship: #8A9875;
+$casal: #34626B;
+$nurse: #EAEEEA;
+$boston: #3291B1;
+$lightgreen:#a3c686;
+
+//===== Custom Mixins =====
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+//===== Default Layout =====
+html {
+    font-size:16px;
+}
+h1, h2, h3, h4, h5, h6 {
+
+}
+a {
+    color:$lightgreen;
+    &:hover {
+
+    }
+    &:active {
+
+    }
+    &:focus {
+
+    }
+}
+
+p {
+
+}
+
+ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: space-between;
+    li {
+
+    }
+}
+
+//
+header {
+    background-color:$finlandia;
+    padding:14px 0 16px;
+    border-bottom:2px solid $white;
+    h2 {
+        font-size:em(15);
+        line-height:em(15);
+        color:$lightgreen;
+        font-family:$font-raleway;
+    }
+    h3 {
+        font-size:em(41);
+        line-height:em(15);
+        color:$nurse;
+        font-family:$font-ptsans;
+        a {
+            color:$white;
+        }
+    }
+    @media only screen and (min-width: 480px) {
+    h3 {
+        font-size:em(51);
+        line-height:em(15);
+        color:$nurse;
+        font-family:$font-ptsans;
+        a {
+            color:$white;
+        }
+    }
+
+    }
+}
+
+nav {
+    position:relative;
+    padding:20px 0 0;
+    svg {
+        width:23px;
+        height:23px;
+        fill:$lightgreen;
+    }
+    a:hover, a:focus, a:active {
+        color:$nurse;
+        svg {
+            fill:$nurse;
+        }
+    } 
+}
+
+#search {
+    display:none;
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+    margin-top:7px;
+    input {
+        border:0;
+        height:100%;
+    }
+}
+
+.hero {
+    position:relative;
+    img {
+        width:100%;
+    }
+    h1 {
+        position:absolute;
+        bottom:55px;
+        width:100%;
+        margin:0 auto;
+        text-align:center;
+        font-family:$font-ptsans;
+        color:$white;
+        font-size:em(40);
+        line-height:1;
+        font-weight:900;
+        text-transform:uppercase;
+        text-shadow: 0 0 15px $black;
+        span {
+            display:block;
+            font-size:em(10);
+        }
+    }
+    @media only screen and (min-width: 480px) {
+        h1 {
+        font-size:em(70);
+        line-height:70px;
+        }
+        span {
+            display:block;
+            font-size:em(25);
+        }
+    }
+}
+
+main {
+    position:relative;
+    background:$white;
+    article {
+        text-align:center;
+        padding:78px 10px 66px;
+        h2 {
+            color:$casal;
+            font-family:$font-ptsans;
+            font-size:em(16);
+            line-height:em(16);
+            font-weight:bold;
+            text-transform:uppercase;
+            padding:0; margin:0;
+        }
+        p {
+            color:$casal;
+            font-family:$font-ptsans;
+            font-size:em(16);
+            line-height:em(25);
+        }
+        a {
+            display:block;
+            margin-top:10px;
+            color:$casal;
+            font-family:$font-ptsans;
+            font-size:em(16);
+        }
+    }
+}
+
+.location {
+    padding:0 0;
+    position:absolute;
+//    width:100%;
+    top:-36px;
+    left:0;
+    right:0;
+    z-index:9999;
+    select {
+        box-shadow: 0px 2px 3px rgb(204, 204, 204);
+        border:0;
+        font-size:em(12);
+        width:100%;
+    }
+    option {
+        width:100%;
+    }
+    @media only screen and (min-width: 480px) {
+        top:10px;
+        left:auto;
+        right:17px;
+        select {
+            width:250px;
+        }
+        option {
+            width:230px;
+        }
+    }
+}
+
+.locations {
+    box-shadow: 10px 5px 5px #000;
+}
+
+aside {
+    clear:both;
+    padding:30px 0;
+    background-color:$nurse;
+    h3 {
+        font-family:$font-raleway;
+        font-size:em(16);
+        font-weight:800;
+    }
+    ul {
+        display:block;
+    }
+    .text-right {
+        text-align:left;
+    }
+    @media only screen and (min-width: 1024px) {
+        .text-right {
+            text-align:right;
+        }
+    }
+}
+
+footer {
+    background:$battleship;
+    text-align:center;
+    padding:30px 0 0px;
+    div {
+        color:$nurse;
+        font-size:em(15);
+        padding-bottom:15px;
+    }
+    a {
+        color:$nurse;
+        font-size:em(15);
+        padding-bottom:15px;
+        &:hover, &:focus, &:active {
+            color:$white;
+        }
+    }
+    @media only screen and (min-width: 1024px) {
+        text-align:left;
+        div {
+
+        }
+        .large-4 {
+            text-align:right;
+        }
+    }
+}
